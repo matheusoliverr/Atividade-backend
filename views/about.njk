@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Sobre</title>
+{% endblock %}
+
+{% block content %}    
+    <main>
+        <img src="{{about.img_url}}" alt="{{about.name}}">
+        <h1>{{about.name}}</h1>
+        <p>{{about.slogan}}</p>
+        <div id="technologies">
+            <ul>Principais tecnologias utilizadas:</ul>
+            {% for tech in about.technologies %}
+            <li>{{tech.name}}</li>
+            {% endfor %}
+            
+        </div>
+    </main>
+
+    <footer>
+
+        {% for media in about.medias %}
+        <a href="{{media.url}}" target="_blank">{{media.name}}</a>
+        {% endfor %}
+            
+    </footer>
+{% endblock %}
+
+        
